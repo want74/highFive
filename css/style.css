@@ -15,5 +15,341 @@ body {
 
 /* Слоган проекта */
 .slogan {
-    
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #F96C1B;
+    width: 25%;
+}
+
+.bold {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.zaz {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Рамка отзыва */
+.ramka {
+    border: 1px solid #F96C1B;
+    border-radius: 7px;
+}
+
+.ramka1 {
+    border: 1px solid #F96C1B;
+    border-radius: 27px;
+}
+
+/* Автор отзыва */
+.author {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sector1 {
+    background-image: url("../img/dalbaeb.svg");
+    background-size: 50vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shadowStart {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    /* identical to box height, or 96px */
+
+    letter-spacing: -0.038em;
+    color: #2E3190 !important;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: absolute;
+    left: 73vw;
+    top: 213vh;
+    z-index: -1;
+}
+
+.shadowProject {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    /* identical to box height, or 96px */
+
+    letter-spacing: -0.038em;
+    color: #2E3190 !important;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: relative;
+    left: -380px;
+    top: -10px;
+    z-index: -1;
+}
+
+.kit {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    /* identical to box height, or 64px */
+
+    letter-spacing: -0.038em;
+
+    color: #FFFFFF;
+
+}
+
+.shadowKit {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    /* identical to box height, or 64px */
+
+    letter-spacing: -0.038em;
+    color: #2E3190 !important;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: relative;
+    left: -230px;
+    top: -10px;
+    z-index: -1;
+}
+
+.shadowBolee {
+    color: #2E3190 !important;
+    font-weight: 700;
+    font-size: 64px;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: relative;
+    left: 10px;
+    top: -90px;
+    z-index: -1;
+}
+
+.ramkaNews {
+    border: 1px solid #F96C1B;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.borderNews2 {
+    border-radius: 0px 0px 17px 17px;
+    border: 1px solid #FFFFFF;
+    position: relative;
+    margin-top: -5px;
+}
+
+.rel {
+    position: relative;
+    margin-top: -170px;
+}
+
+.btn-our {
+    border: 1px solid #E06529;
+    border-radius: 11px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+
+
+    color: #8080FF;
+}
+
+.shadow2Project {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    /* identical to box height, or 96px */
+
+    letter-spacing: -0.038em;
+    color: #2E3190 !important;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: relative;
+    left: 20px;
+    top: -110px;
+    z-index: -1;
+}
+
+.shadowGuild {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    /* identical to box height, or 96px */
+
+    letter-spacing: -0.038em;
+    color: #2E3190 !important;
+    text-shadow:
+        -0 -1px 0 #F96C1B,
+        0 -1px 0 #F96C1B,
+        -0 1px 0 #F96C1B,
+        0 1px 0 #F96C1B,
+        -1px -0 0 #F96C1B,
+        1px -0 0 #F96C1B,
+        -1px 0 0 #F96C1B,
+        1px 0 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B,
+        -1px -1px 0 #F96C1B,
+        1px -1px 0 #F96C1B,
+        -1px 1px 0 #F96C1B,
+        1px 1px 0 #F96C1B;
+    position: relative;
+    left: -20.2vw;
+    margin-top: -1vh;
+    z-index: -1;
+}
+
+.ss {
+    position: relative;
+    margin-top: -100px;
+    z-index: 12030;
+}
+
+.borderY {
+    border-top: 0.5px solid #949494;
+    border-bottom: 0.5px solid #949494;
+}
+
+.custom {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+    letter-spacing: -0.32px;
+
+    color: #8080FF;
+}
+
+.title {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.24px;
+
+    color: #FFFFFF;
+}
+
+.kol {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+
+    letter-spacing: -0.078px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-more {
+    border: 1px solid #E06529;
+    border-radius: 58px;
+    color: #E06529;
 }
