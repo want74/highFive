@@ -353,3 +353,39 @@ body {
     border-radius: 58px;
     color: #E06529;
 }
+
+.borderNews3 {
+    
+    border: 1px solid #FFFFFF;
+    border-radius: 27px;
+    position: relative;
+    margin-top: 100px;
+    background: #2E3190;
+}
+
+.btn-join {
+    background: #E06529;
+    border: 1px solid #E06529;
+    border-radius: 58px;
+    position: relative;
+    margin-top: -20px;
+}
+
+/* bordrer bottom line */
+
+.bbl {    
+    border-bottom: 0.5px solid #949494;
+}
+
+.orange {
+    font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+letter-spacing: -0.32px;
+
+color: #E06529;
+}
