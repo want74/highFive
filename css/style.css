@@ -355,7 +355,7 @@ body {
 }
 
 .borderNews3 {
-    
+
     border: 1px solid #FFFFFF;
     border-radius: 27px;
     position: relative;
@@ -373,19 +373,48 @@ body {
 
 /* bordrer bottom line */
 
-.bbl {    
+.bbl {
     border-bottom: 0.5px solid #949494;
 }
 
 .orange {
     font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height, or 125% */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
 
-letter-spacing: -0.32px;
+    letter-spacing: -0.32px;
 
-color: #E06529;
+    color: #E06529;
+}
+
+.abs {
+    position: fixed;
+    top: 5vh;
+    left: 80vw;
+}
+
+.btn-reg {
+    border-bottom: 1px solid #474CCA;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+
+    color: #FFFFFF;
+}
+
+.btn-go {
+    border: 1px solid #F96C1B;
+    border-radius: 58px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+
+    color: #F96C1B;
 }

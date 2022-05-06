@@ -1,3 +1,10 @@
+<?php
+    include "connect.php";
+    $query1 = mysqli_query($con, "SELECT * FROM users");
+    session_start();
+    echo $_SESSION['user_id'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,6 +27,10 @@
 </head>
 
 <body>
+    <div class="abs">
+        <a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a>
+        <a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a>
+    </div>
     <div class="container-fluid">
         <!-- Слайд 1 -->
         <div class="row panel sector1" style="height: 100vh;" data-section-name="1">
@@ -371,7 +382,10 @@
                 </div>
             </div>
             <div class="row ">
-                <iframe class="mx-auto" style="width: 50vw;" src="https://vk.com/video_ext.php?oid=-212633668&id=456239039&hash=101923f861fd5eb4" height="500" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe class="mx-auto" style="width: 50vw;"
+                    src="https://vk.com/video_ext.php?oid=-212633668&id=456239039&hash=101923f861fd5eb4" height="500"
+                    frameborder="0" allowfullscreen="1"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
     </div>
