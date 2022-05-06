@@ -27,10 +27,12 @@
 </head>
 
 <body>
-    <div class="abs">
-        <a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a>
-        <a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a>
-    </div>
+<?php
+    if($_SESSION['user_id']==0){
+        echo'<div class="abs"><a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a><a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a></div>';
+     }
+    ?>
+    
     <div class="container-fluid">
         <!-- Слайд 1 -->
         <div class="row panel sector1" style="height: 100vh;" data-section-name="1">

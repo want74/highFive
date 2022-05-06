@@ -1,3 +1,11 @@
+<?php
+    include "connect.php";
+    session_start();
+    $query1 = mysqli_query($con, "SELECT * FROM kits WHERE id='{$_GET['kit_id']}'");
+    $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE kit_id='{$_GET['kit_id']}'");
+    $stroka1 = $query1->fetch_assoc();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -33,13 +41,23 @@
                                         Все гильдии
                                     </p>
                                 </div>
+                                <?php
+                                    for($i=0;$i<$query2->num_rows;$i++){
+                                        $stroka2 = $query2->fetch_assoc();
+                                ?>
                                 <div class="row">
-                                    <div class="col-1">
-                                        <img src="img/logoGuild.png" class="w-100">
+                                    <div class="col-1">                                        
+                                        <?php
+                                            echo '<img src="'.$stroka2['img'].'" class="krug">';
+                                        ?>
                                     </div>
                                     <div class="col">
                                         <div class="row">
-                                            <p class="title">Японские шахматы</p>
+                                            <p class="title">
+                                            <?php
+                                                echo $stroka2['name'];
+                                            ?>
+                                            </p>
                                         </div>
                                         <div class="row">
                                             <p class="kol">
@@ -48,36 +66,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="img/logoGuild.png" class="w-100">
-                                    </div>
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="title">Японские шахматы</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="kol">
-                                                10.000 участников
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="img/logoGuild.png" class="w-100">
-                                    </div>
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="title">Японские шахматы</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="kol">
-                                                10.000 участников
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="row">
@@ -120,18 +111,21 @@
                         <div class="row">
                             <p class="ms-auto"
                                 style="color: #8080FF;font-weight: 700;font-size: 64px;width:max-content;">
-                                Три языка
+                                <?php
+                                    echo $stroka1['title'];
+                                ?>
                             </p>
                         </div>
                         <div class="row">
                             <div class="col-8 ramka ms-auto">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="my-4" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 24px;line-height: 33px;color: #8080FF;">
-                                            Некоторые люди учат языки, потому что они им нужны для роботы, другим
-                                            путешествовать за границу, и для третьих это просто хобби.
-                                            Люди хотят знать языки, писать друзьям по переписке или общаться с людьми с
-                                            разных стран, встретить больше новых людей и завести друзей.</p>
+                                        <p class="my-4"
+                                            style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 24px;line-height: 33px;color: #8080FF;">
+                                            <?php
+                                            echo $stroka1['description'];
+                                        ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

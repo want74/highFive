@@ -418,3 +418,13 @@ body {
 
     color: #F96C1B;
 }
+
+.krug {
+    border-radius: 98.5px!important;
+    width: 60px;
+    height: 60px;
+    
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100% 100%;
+}
