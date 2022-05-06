@@ -1,3 +1,10 @@
+<?php 
+    include "connect.php";
+    $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE id='{$_GET['guild_id']}'");
+    $query3 = mysqli_query($con, "SELECT * FROM newsguild WHERE guild_id='{$_GET['guild_id']}'");
+    $queryTreb = mysqli_query($con, "SELECT * FROM treb WHERE guild_id='{$_GET['guild_id']}'");
+    $stroka1 = $query2->fetch_assoc();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -32,13 +39,18 @@
                                         <div class="row mt-4">
                                             <div class="col-2">
                                                 <div class="row h-100">
-                                                    <img src="img/logoGuild.png" class="w-100 mx-auto my-auto"
-                                                        style="height: 35px;width:45px;">
+                                                    <?php
+                                                    echo '<img src="'.$stroka1['img'].'" class="krug h-50 my-auto">';
+                                                ?>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="row">
-                                                    <p class="title">Японские шахматы</p>
+                                                    <p class="title">
+                                                        <?php
+                                                            echo $stroka1['name']
+                                                        ?>
+                                                    </p>
                                                 </div>
                                                 <div class="row">
                                                     <p class="kol">
@@ -47,7 +59,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <p class="kol">
-                                                        Рейтинг №3
+                                                        Рейтинг: №
+                                                        <?php
+                                                            echo $stroka1['rating']
+                                                        ?>
                                                     </p>
                                                 </div>
                                             </div>
@@ -63,10 +78,9 @@
                                             <div class="col-11 mx-auto borderNews3">
                                                 <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
                                                     class="my-5">
-                                                    Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя
-                                                    профессия IT
-                                                    2022”.
-                                                    Задание создать web сайт для...
+                                                    <?php
+                                                        echo $stroka1['description']
+                                                    ?>
                                                 </p>
                                             </div>
                                         </div>
@@ -88,7 +102,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="guild.php" class="bold my-auto text-decoration-none">События и турниры</a>
+                                    <?php
+                                        echo '<a href="guild.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">События и турниры</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +116,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="#" class="bold my-auto text-decoration-none">Дискорд сервер гильдии</a>
+                                    <?php
+                                        echo '<a href="?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Дискорд сервер гильдии</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +130,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="rules.php" class="bold my-auto text-decoration-none">Правила</a>
+                                    <?php
+                                        echo '<a href="rules.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Правила</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +144,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="treb.php" class="bold my-auto text-decoration-none">Требования</a>
+                                    <?php
+                                        echo '<a href="treb.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Требования</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -142,29 +164,24 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row pt-5">
+                                <div class="row row-colos-3 pt-5">
+                                    <?php
+                                        for($i=0;$i<$queryTreb->num_rows;$i++){
+                                            $treb = $queryTreb->fetch_assoc();
+                                    ?>
                                     <div class="col-3 mx-auto ramka1" style="height: 150px;">
                                         <div class="row h-100">
                                             <p class="my-auto"
                                                 style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                1. члены гильдии обязаны уважать своих согильдийцев;</p>
+                                                <?php
+                                                    echo $treb['text'];
+                                                ?>
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;">
-                                        <div class="row h-100">
-                                            <p class="my-auto"
-                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                2. маты и оскорбления, несущие открытую агрессию, в общем чате гильдии
-                                                категорически запрещены;</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;">
-                                        <div class="row h-100">
-                                            <p class="my-auto"
-                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                3. все конфликты и споры разрешаются через ГМа и его замов.</p>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        };
+                                    ?>
                                 </div>
                             </div>
                         </div>

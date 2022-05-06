@@ -46,7 +46,10 @@
                                         $stroka2 = $query2->fetch_assoc();
                                 ?>
                                 <div class="row">
-                                    <div class="col-1">                                        
+                                    <?php
+                                        echo '<a class="d-flex text-decoration-none" href="guild.php?guild_id='.$stroka2['id'].'">';
+                                    ?>
+                                    <div class="col-1">
                                         <?php
                                             echo '<img src="'.$stroka2['img'].'" class="krug">';
                                         ?>
@@ -54,7 +57,7 @@
                                     <div class="col">
                                         <div class="row">
                                             <p class="title">
-                                            <?php
+                                                <?php
                                                 echo $stroka2['name'];
                                             ?>
                                             </p>
@@ -65,6 +68,7 @@
                                             </p>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                                 <?php
                                     }

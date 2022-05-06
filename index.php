@@ -2,7 +2,6 @@
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM users");
     session_start();
-    echo $_SESSION['user_id'];
 ?>
 
 <!doctype html>
@@ -27,12 +26,12 @@
 </head>
 
 <body>
-<?php
+    <?php
     if($_SESSION['user_id']==0){
         echo'<div class="abs"><a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a><a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a></div>';
      }
     ?>
-    
+
     <div class="container-fluid">
         <!-- Слайд 1 -->
         <div class="row panel sector1" style="height: 100vh;" data-section-name="1">
@@ -122,37 +121,19 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row row-cols-5" style="z-index: 10000;">
-                                <div class="col mx-auto" style="width: 350px;">
-                                    <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
+                            <div class="row row-cols-3" style="z-index: 10000;">
+                                <a href="kit.php?kit_id=1" class="mx-auto text-decoration-none">
+                                    <div class="col " style="width: 350px;">
+                                        <div class="row">
+                                            <div class="col ramka1" style="height: 250px;">
 
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <p class="mx-auto bold" style="width: max-content;">Три языка</p>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
-                                    </div>
-                                </div>
-                                <div class="col mx-auto" style="width: 350px;">
-                                    <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
-
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
-                                    </div>
-                                </div>
-                                <div class="col mx-auto" style="width: 350px;">
-                                    <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
-
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
