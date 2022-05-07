@@ -247,14 +247,15 @@ body {
 .ramkaNews {
     border: 1px solid #F96C1B;
     border-radius: 10px;
-    height: 200px;
 }
 
 .borderNews2 {
-    border-radius: 0px 0px 17px 17px;
-    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid white;
+    z-index: 10;
     position: relative;
-    margin-top: -5px;
+    margin-top: -30px;
+    background: #2E3190;
 }
 
 .rel {
@@ -470,4 +471,15 @@ body {
     
     background-repeat: no-repeat;
     background-position: cover;
+}
+
+.ramkaOrange{
+    background: #E06529;
+    border: 1px solid #FFFFFF;
+    border-radius: 17px;
+    height: auto!important;
+}
+
+.borderBot {
+    border-bottom: 1px solid #D7D8D9;
 }

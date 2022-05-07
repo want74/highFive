@@ -204,7 +204,7 @@ session_start();
                                 <div class="row mt-5">
                                     <div class="col-8 bbl">
                                         <p class="my-3 orange" style="color: #8080FF;">
-                                            чат
+                                            Чат
                                         </p>
                                     </div>
                                 </div>
