@@ -95,7 +95,15 @@ session_start();
                                                     Вступить!
                                                 </button>
                                                 </a>';
-                                            }                                                
+                                            }  
+                                            if($userstr['guild_id']==$stroka1['id']){
+                                                echo '<a class="mx-auto" style="width:max-content;" href="minus.php?guild_id='.$_GET["guild_id"].'">
+                                                <button class="btn btn-join  px-4 py-2 text-white"
+                                                    style="width: max-content;">
+                                                    Покинуть
+                                                </button>
+                                                </a>';
+                                            }                                              
                                             ?>
                                         </div>
                                     </div>
@@ -201,10 +209,29 @@ session_start();
                                                 ?>
                                             </p>
                                         </div>
-                                        
+                                        <div class="row">
+                                            <?php
+                                            if($userstr['id']==$stroka1['gm_id']){
+                                                echo '<a class="mx-auto" style="width:max-content;" href="rednews.php?guild_id='.$_GET["guild_id"].'&news_id='.$stroka2["id"].'">
+                                                        <button class="btn btn-join  px-4 py-2 text-white"
+                                                            style="width: max-content;">
+                                                            Ред. новость
+                                                        </button>
+                                                        </a>';
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                     <?php
                                         };
+                                        if($userstr['id']==$stroka1['gm_id']){
+                                            echo '<a class="mx-auto" style="width:max-content;" href="cng.php?guild_id='.$_GET["guild_id"].'">
+                                                    <button class="btn btn-join  px-4 py-2 text-white"
+                                                        style="width: max-content;">
+                                                        Создать новость
+                                                    </button>
+                                                    </a>';
+                                        }
                                     ?>
                                 </div>
                                 

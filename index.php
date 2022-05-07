@@ -123,7 +123,7 @@
                                 <div class="col-3 mx-auto">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="kit.php?kit_id=3" class="mx-auto text-decoration-none">
+                                            <a href="kit.php?kit_id=4" class="mx-auto text-decoration-none">
                                                 <img src="img/1.svg" class="w-100">
                                             </a>
                                         </div>
@@ -135,7 +135,7 @@
                                 <div class="col-3 mx-auto">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="kit.php?kit_id=2" class="mx-auto text-decoration-none">
+                                            <a href="kit.php?kit_id=5" class="mx-auto text-decoration-none">
                                                 <img src="img/2.svg" class="w-100">
                                             </a>
                                         </div>
@@ -162,7 +162,7 @@
                                 <div class="col-3 mx-auto">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="kit.php?kit_id=4" class="mx-auto text-decoration-none">
+                                            <a href="kit.php?kit_id=2" class="mx-auto text-decoration-none">
                                                 <img src="img/4.svg" class="w-100">
                                             </a>
                                         </div>
@@ -174,7 +174,7 @@
                                 <div class="col-3 mx-auto">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="kit.php?kit_id=5" class="mx-auto text-decoration-none">
+                                            <a href="kit.php?kit_id=3" class="mx-auto text-decoration-none">
                                                 <img src="img/5.svg" class="w-100">
                                             </a>
                                         </div>

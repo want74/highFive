@@ -203,9 +203,29 @@
                                                 ?>
                                             </p>
                                         </div>
+                                        <div class="row">
+                                            <?php
+                                            if($userstr['id']==$stroka1['gm_id']){
+                                                echo '<a class="mx-auto" style="width:max-content;" href="redTreb.php?guild_id='.$_GET["guild_id"].'&treb_id='.$treb["id"].'">
+                                                        <button class="btn btn-join  px-4 py-2 text-white"
+                                                            style="width: max-content;">
+                                                            Ред. требование
+                                                        </button>
+                                                        </a>';
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                     <?php
                                         };
+                                        if($userstr['id']==$stroka1['gm_id']){
+                                            echo '<a class="mx-auto" style="width:max-content;" href="pt.php?guild_id='.$_GET["guild_id"].'">
+                                                    <button class="btn btn-join  px-4 py-2 text-white"
+                                                        style="width: max-content;">
+                                                        Создать требование
+                                                    </button>
+                                                    </a>';
+                                        }
                                     ?>
                                 </div>
                             </div>

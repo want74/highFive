@@ -2,7 +2,7 @@
     include "connect.php";
     session_start();
     $query1 = mysqli_query($con, "SELECT * FROM kits WHERE id='{$_GET['kit_id']}'");
-    $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE kit_id='{$_GET['kit_id']}'");
+    $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE kit_id='{$_GET['kit_id']}' ORDER BY rating DESC");
     $klk = mysqli_query($con, "SELECT * FROM news WHERE kit_id='{$_GET['kit_id']}' ORDER BY id DESC");
     $stroka1 = $query1->fetch_assoc();
 ?>
@@ -74,6 +74,14 @@
                                 <?php
                                     }
                                 ?>
+                                <div class="row">
+                                <a href="cg.php" class="my-auto ms-5 d-flex text-decoration-none" style="width: max-content;">
+                                    <button class="btn btn-more py-2 px-4 "
+                                        style="width: max-content;height:10%;">
+                                        Создать свою гильдию
+                                    </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
