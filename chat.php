@@ -1,10 +1,14 @@
 <?php 
+session_start();
     include "connect.php";
     $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE id='{$_GET['guild_id']}'");
     $query3 = mysqli_query($con, "SELECT * FROM newsguild WHERE guild_id='{$_GET['guild_id']}'");
+    $queryTreb = mysqli_query($con, "SELECT * FROM treb WHERE guild_id='{$_GET['guild_id']}'");
+    $q4 = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['user_id']}'");
+    $me = $q4->fetch_assoc();
     $stroka1 = $query2->fetch_assoc();
+    $users = mysqli_query($con, "SELECT * FROM users WHERE guild_id='{$_GET['guild_id']}'");
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -24,6 +28,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- minified snippet to load TalkJS without delaying your page -->
+    <script>
+        (function (t, a, l, k, j, s) {
+            s = a.createElement('script');
+            s.async = 1;
+            s.src = "https://cdn.talkjs.com/talk.js";
+            a.head.appendChild(s);
+            k = t.Promise;
+            t.Talk = {
+                v: 3,
+                ready: {
+                    then: function (f) {
+                        if (k) return new k(function (r, e) {
+                            l.push([f, r, e])
+                        });
+                        l
+                            .push([f])
+                    },
+                    catch: function () {
+                        return k && new k()
+                    },
+                    c: l
+                }
+            };
+        })(window, document, []);
+    </script>
 </head>
 
 <body>
@@ -174,75 +204,14 @@
                                 <div class="row mt-5">
                                     <div class="col-8 bbl">
                                         <p class="my-3 orange" style="color: #8080FF;">
-                                            Правила
+                                            чат
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row pt-5">
-                                    <div class="col-3 mx-auto" style="height: 150px;border-color:#8080FF;">
-                                        <div class="row h-100">
-                                            <p class="my-auto"
-                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                1. члены гильдии обязаны уважать своих согильдийцев;</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto" style="height: 150px;border-color:#8080FF;">
-                                        <div class="row h-100">
-                                            <p class="my-auto"
-                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                2. маты и оскорбления, несущие открытую агрессию, в общем чате гильдии
-                                                категорически запрещены;</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto" style="height: 150px;border-color:#8080FF;">
-                                        <div class="row h-100">
-                                            <p class="my-auto"
-                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
-                                                3. все конфликты и споры разрешаются через ГМа и его замов.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-5">
-                                    <div class="col-8 bbl">
-                                        <p class="my-3 orange">
-                                            Правила поведения в Гильдии.
-                                            Члену Гильдии запрещается:
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row pt-5">
-                                    <div class="row">
-                                        <p class="bold my-2">
-                                            1. оскорблять, провоцировать других игроков - все межличностные отношения
-                                            решаются в приватном чате и выражают личное мнение члена, но не Гильдии;
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="bold my-2">
-
-                                            2. негативно высказываться о Гильдии в каналах, включая канал Гильдии;
-
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="bold my-2">
-                                            3. лутерство (в рейде или пати);
-                                            <div class="row">
-                                                <p class="bold my-2">
-                                                    4. попрошайничество;
-                                                </p>
-                                            </div>
-                                            <div class="row">
-                                                <p class="bold my-2">
-                                                    5. бросать группу или рейд ради других игровых мероприятий;
-
-                                                </p>
-                                            </div>
-                                            <div class="row">
-                                                <p class="bold my-2">
-                                                    6. совершать торговые операции с другими членами гильдии.
-                                                </p>
-                                            </div>
+                                    <!-- container element in which TalkJS will display a chat UI -->
+                                    <div id="talkjs-container" style="width: 100%; margin: 30px; height: 500px">
+                                        <i>Loading chat...</i>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +229,60 @@
     </script>
     <script src="script/jquery.scrollify.js"></script>
     <script>
-    </script>
+    Talk.ready.then(function () {
+        var me = new Talk.User(
+            <?php echo json_encode(array(
+                "id" => strval($me['id']),
+                "name" => $me['login'],
+                "email" => $me['email']
+            )); ?>
+        );
+        window.talkSession = new Talk.Session({
+            appId: 't19HwB6X',
+            me: me,
+        });
+
+        <?php
+            for($i=0;$i<$users->num_rows;$i++){
+                $treb = $users->fetch_assoc();
+                echo "var other".$i." = new Talk.User("
+        ?>
+        
+        
+            <?php echo json_encode(array(
+                "id" => strval($treb['id']),
+                "name" => $treb['login'],
+                "email" => $treb['email']
+            )); ?>
+        );
+        <?php
+            };
+        ?>
+
+        var conversation = window.talkSession.getOrCreateConversation("CONVERSATION_ID");
+        conversation.setParticipant(me);
+        <?php
+            for($i=0;$i<$users->num_rows;$i++){
+                $treb = $users->fetch_assoc();
+                echo "conversation.setParticipant(other".$i.");"
+        ?>
+        
+        <?php
+            };
+        ?>
+        conversation.setAttributes({
+           
+            <?php
+                echo "photoUrl: '".$stroka1['img']."',";
+                echo "subject: '".$stroka1['name']."'";
+            ?>
+        });
+
+        var chatbox = window.talkSession.createChatbox();
+        chatbox.select(conversation);
+        chatbox.mount(document.getElementById('talkjs-container'));
+    });
+</script>
 </body>
 
 </html>

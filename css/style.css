@@ -3,6 +3,11 @@ body {
     background: #2E3190;
 }
 
+.logo {
+    width: 50%;
+    height: 20vh;
+}
+
 /* Название проекта */
 .project {
     font-weight: 700;
@@ -59,11 +64,48 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.sector1 {
-    background-image: url("../img/dalbaeb.svg");
+.bg {
+    background-image: url("../img/bg.svg");
     background-size: 50vw;
+    background-position: 0vw;
+    background-repeat: no-repeat;
+}
+
+.sector1 {
+    background-image: url("../img/sector1.svg");
+    background-size: 100vw;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.bgKek {
+    background-image: url("../img/kits.svg");
+    background-size: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lol {
+    background-image: url("../img/kit1.svg");
+    background-size: 30vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bgCircle {
+    background-image: url("../img/circle.svg");
+    background-size: 40vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -4123132213321!important;
+}
+
+.bg5kitov {
+    background-image: url("../img/bg5kitov.svg");
+    background-size: 100vw;
+    background-position:bottom;
+    background-repeat: no-repeat;
+    z-index: -4123132213321!important;
 }
 
 .shadowStart {
@@ -298,9 +340,11 @@ body {
     z-index: -1;
 }
 
+
+
 .ss {
     position: relative;
-    margin-top: -100px;
+    margin-top: -50px;
     z-index: 12030;
 }
 
@@ -421,10 +465,9 @@ body {
 
 .krug {
     border-radius: 98.5px!important;
-    width: 60px;
+    width: 100%;
     height: 60px;
     
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 100% 100%;
 }

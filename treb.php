@@ -37,7 +37,7 @@
                                 <div class="row ramkaNews mt-5" style="border:1px solid #8080FF;">
                                     <div class="col-10 mx-auto">
                                         <div class="row mt-4">
-                                            <div class="col-2">
+                                            <div class="col-3">
                                                 <div class="row h-100">
                                                     <?php
                                                     echo '<img src="'.$stroka1['img'].'" class="krug h-50 my-auto">';
@@ -146,6 +146,20 @@
                                 <div class="row h-100">
                                     <?php
                                         echo '<a href="treb.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Требования</a>'
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-3">
+                                <div class="row">
+                                    <img src="img/docs.png" class="w-100 my-auto">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row h-100">
+                                    <?php
+                                        echo '<a href="chat.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Чат</a>'
                                     ?>
                                 </div>
                             </div>

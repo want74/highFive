@@ -163,33 +163,65 @@
                 <div class="row">
                     <div class="col-6 mx-auto">
                         <div class="row" style="margin-top: 20vh;">
-                            <h1 class="head-reg">Вход в аккаунт</h1>
+                            <h1 class="head-reg">Создать гильдию</h1>
                         </div>
                         <div class="row">
-                            <p class="text-reg">Для успешного входа заполните следуещее... </p>
+                            <p class="text-reg">Для успешного добавления заполните следующее... </p>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <form action="going.php" method="post" class="w-100">
+                                <form action="createGuild.php" method="post" class="w-100">
                                     <div class="row mt-4">
                                         <div class="col">
                                             <div class="row">
-                                                <p class="login">Логин</p>
+                                                <p class="login">Кит</p>
                                             </div>
                                             <div class="row">
-                                                <input type="text" name="login" class="form-control text-white"
-                                                    placeholder="Например: Alexey Semenov">
+                                                <input type="text" name="kit_id" class="form-control"
+                                                    placeholder="1-Три языка,2-,3-,4-,5-">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mt-4">
                                         <div class="col">
                                             <div class="row">
-                                                <p class="login">Пароль</p>
+                                                <p class="login">Название</p>
                                             </div>
                                             <div class="row">
-                                                <input type="password" name="pass" class="form-control text-white"
-                                                    placeholder="Password">
+                                                <input type="text" name="name" class="form-control"
+                                                    placeholder="3Limbs">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Описание гильдии</p>
+                                            </div>
+                                            <div class="row">
+                                                <textarea name="description" cols="30" rows="3" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Дискорд гильдии</p>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" name="discord" class="form-control"
+                                                    placeholder="discord">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Аватарка</p>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" name="img" class="form-control"
+                                                    placeholder="">
                                             </div>
                                         </div>
                                     </div>

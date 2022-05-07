@@ -19,8 +19,8 @@
         body {
             margin: 0 auto;
             height: auto;
-            background-color: #0D0D0D;
-            background-image: url(img/grid.svg);
+            background-color: #2E3190;
+            background-image: url(img/kits.svg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -28,8 +28,10 @@
 
         /*Левая колонка*/
         .left {
-            background: rgba(115, 124, 132, 0.04);
-            backdrop-filter: blur(56px);
+            background-image: url("/img/circle.svg");
+            background-size: 50vw;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
         }
 
@@ -87,7 +89,7 @@
             display: flex;
             align-items: center;
 
-            color: #8080FF;
+            color: #F96C1B;
         }
 
         /*текст*/
@@ -119,7 +121,7 @@
         }
 
         input {
-            background: #282828 !important;
+            background: white !important;
             border: 1px solid #8080FF !important;
             box-sizing: border-box !important;
             border-radius: 6px !important;
@@ -128,7 +130,7 @@
 
         /*кнопка выбора программы*/
         .btn-choice {
-            background: #8080FF;
+            background: #F96C1B;
             border-radius: 4px;
             color: white;
             height: 40px;
@@ -146,17 +148,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col left">
-                <div class="row">
-                    <img src="img/logo.svg" class="w-25 mx-auto" style="margin-top: 30vh;">
-                </div>
-                <div class="row">
-                    <p class="spec text-white">Программа</p>
+                <div class="row" style="margin-top: 5vh;">
+                    <img src="img/logomin.svg" class="w-25 mx-auto" style="margin-top: 5vh;">
                 </div>
                 <div class="row mb-5">
-                    <p class="ourProject text-white">High Five</p>
+                    <img src="img/logo.svg" class="w-50 mx-auto" style="margin-top: 5vh;">
                 </div>
                 <div class="row">
-                    <p class="slogan w-75 mx-auto">прокачай свою научную работу, воплоти в жизнь практическую часть, получи поддержку менторов, найди новых друзей!</p>
+                    <p class="slogan w-75 mx-auto">прокачай свою научную работу, воплоти в жизнь практическую часть,
+                        получи поддержку менторов, найди новых друзей!</p>
                 </div>
             </div>
             <div class="col">
@@ -165,49 +165,50 @@
                         <div class="row" style="margin-top: 20vh;">
                             <h1 class="head-reg">Регистрация аккаунта </h1>
                         </div>
-                        <div class="row sec">
+                        <div class="row">
                             <p class="text-reg">Для успешной регистрации заполните следуещее... </p>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <form action="reg.php" method="post" class="w-100">
-                                <div class="row mt-4">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="login">Логин</p>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" name="login" class="form-control text-white"
-                                                placeholder="Например: Alexey Semenov">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="login">Почта</p>
-                                        </div>
-                                        <div class="row">
-                                            <input type="email" name="email" class="form-control text-white"
-                                                placeholder="Enter email address">
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Логин</p>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" name="login" class="form-control"
+                                                    placeholder="Например: Alexey Semenov">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="login">Создайте надежный пароль</p>
-                                        </div>
-                                        <div class="row">
-                                            <input type="password" name="pass" class="form-control text-white" placeholder="Password">
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Почта</p>
+                                            </div>
+                                            <div class="row">
+                                                <input type="email" name="email" class="form-control"
+                                                    placeholder="Enter email address">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <button class="btn btn-choice mx-auto w-25">
-                                        Дальше
-                                    </button>
-                                </div>
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="row">
+                                                <p class="login">Создайте надежный пароль</p>
+                                            </div>
+                                            <div class="row">
+                                                <input type="password" name="pass" class="form-control"
+                                                    placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <button class="btn btn-choice mx-auto w-25">
+                                            Дальше
+                                        </button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
