@@ -1,3 +1,12 @@
+<?php 
+session_start();
+    include "connect.php";
+    $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE id='{$_GET['guild_id']}'");
+    $query3 = mysqli_query($con, "SELECT * FROM newsguild WHERE guild_id='{$_GET['guild_id']}'");
+    $stroka1 = $query2->fetch_assoc();
+    $userd = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['user_id']}'");
+    $userstr = $userd->fetch_assoc();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -19,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-<body>
+<body class="bg-now" style="height: 100vh;">
     <div class="container-fluid">
         <div class="row" style="height: 100vh;" data-section-name="1">
             <div class="col-10 mx-auto" style="height: 100vh;">
@@ -30,15 +39,20 @@
                                 <div class="row ramkaNews mt-5" style="border:1px solid #8080FF;">
                                     <div class="col-10 mx-auto">
                                         <div class="row mt-4">
-                                            <div class="col-2">
+                                            <div class="col-3">
                                                 <div class="row h-100">
-                                                    <img src="img/logoGuild.png" class="w-100 mx-auto my-auto"
-                                                        style="height: 35px;width:45px;">
+                                                <?php
+                                                    echo '<img src="'.$stroka1['img'].'" class="krug h-50 my-auto">';
+                                                ?>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="row">
-                                                    <p class="title">Японские шахматы</p>
+                                                    <p class="title">
+                                                        <?php
+                                                            echo $stroka1['name']
+                                                        ?>
+                                                    </p>
                                                 </div>
                                                 <div class="row">
                                                     <p class="kol">
@@ -47,7 +61,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <p class="kol">
-                                                        Рейтинг №3
+                                                        Рейтинг: № 
+                                                        <?php
+                                                            echo $stroka1['rating']
+                                                        ?>
                                                     </p>
                                                 </div>
                                             </div>
@@ -60,21 +77,26 @@
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-11 mx-auto borderNews3">
+                                            <div class="col-11 mx-auto borderNews3" style="margin-top: 160px;">
                                                 <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
                                                     class="my-5">
-                                                    Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя
-                                                    профессия IT
-                                                    2022”.
-                                                    Задание создать web сайт для...
+                                                    <?php
+                                                        echo $stroka1['description']
+                                                    ?>
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <button class="btn btn-join mx-auto px-4 py-2 text-white"
-                                                style="width: max-content;">
-                                                Вступить!
-                                            </button>
+                                        <div class="row">   
+                                            <?php
+                                            if($userstr['guild_id']==0){
+                                                echo '<a class="mx-auto" style="width:max-content;" href="plus.php?guild_id='.$_GET["guild_id"].'">
+                                                <button class="btn btn-join  px-4 py-2 text-white"
+                                                    style="width: max-content;">
+                                                    Вступить!
+                                                </button>
+                                                </a>';
+                                            }                                                
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +110,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="guild.php" class="bold my-auto text-decoration-none">События и турниры</a>
+                                    <?php
+                                        echo '<a href="guild.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">События и турниры</a>'
+                                    ?>                                    
                                 </div>
                             </div>
                         </div>
@@ -100,7 +124,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="#" class="bold my-auto text-decoration-none">Дискорд сервер гильдии</a>
+                                    <?php
+                                        echo '<a href="?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Дискорд сервер гильдии</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +138,9 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="rules.php" class="bold my-auto text-decoration-none">Правила</a>
+                                    <?php
+                                        echo '<a href="rules.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Правила</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +152,23 @@
                             </div>
                             <div class="col">
                                 <div class="row h-100">
-                                    <a href="treb.php" class="bold my-auto text-decoration-none">Требования</a>
+                                    <?php
+                                        echo '<a href="treb.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Требования</a>'
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-3">
+                                <div class="row">
+                                    <img src="img/docs.png" class="w-100 my-auto">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row h-100">
+                                    <?php
+                                        echo '<a href="chat.php?guild_id='.$_GET['guild_id'].'" class="bold my-auto text-decoration-none">Чат</a>'
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -142,47 +186,28 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row pt-5">
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;border-color:#8080FF;">
+                                
+                                <div class="row row-cols-3 pt-5 g-3">
+                                    <?php
+                                        for($i=0;$i<$query3->num_rows;$i++){
+                                            $stroka2 = $query3->fetch_assoc();
+                                    ?>
+                                    <div class="col ramka1" style="height: 150px;border-color:#8080FF;">
                                         <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
+                                            <p class="my-auto"
+                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">
+                                                <?php
+                                                    echo $stroka2['title'];
+                                                ?>
+                                            </p>
                                         </div>
+                                        
                                     </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;border-color:#8080FF;">
-                                        <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;border-color:#8080FF;">
-                                        <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        };
+                                    ?>
                                 </div>
-                                <div class="row mt-5">
-                                    <div class="col-8 bbl">
-                                        <p class="my-3 orange" style="color: #8080FF;">
-                                            Турниры
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row pt-5">
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;">
-                                        <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;">
-                                        <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mx-auto ramka1" style="height: 150px;">
-                                        <div class="row h-100">
-                                            <p class="my-auto" style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;">Собираем ребят для тура в Америку! подобности в дискорд сервере гильдии.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 <?php
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM users");
+    $query2 = mysqli_query($con, "SELECT * FROM news ORDER BY id DESC");
     session_start();
-    echo $_SESSION['user_id'];
 ?>
 
 <!doctype html>
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     if($_SESSION['user_id']==0){
         echo'<div class="abs"><a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a><a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a></div>';
      }
@@ -35,84 +35,81 @@
     
     <div class="container-fluid">
         <!-- Слайд 1 -->
-        <div class="row panel sector1" style="height: 100vh;" data-section-name="1">
-            <div class="col-10 mx-auto" style="height: 100vh;">
-                <div class="row" style="height: 100vh;">
-                    <div class="col my-auto">
-                        <div class="row my-4">
-                            <h1 class="project text-white animate__animated" style="width:max-content;">
-                                High five
-                            </h1>
-                            <h1 class="shadowProject text-white animate__animated" style="width:max-content;">
-                                High five
-                            </h1>
-                        </div>
-                        <div class="row">
-                            <p class="slogan">
-                                Найди своих
-                                единомышленников
-                                и развивайся!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col">
+        <div class="row panel bgKek" style="height: 100vh;" data-section-name="1">
+            <div class="col">
+                <div class="row lol ">
+                    <div class="col-10 loll mx-auto" style="height: 100vh;">
                         <div class="row" style="height: 100vh;">
-                            <div class="col-6 ms-auto my-auto">
-                                <div class="row">
-                                    <h1 style="color: #8080FF;font-weight: 700;font-size: 64px;">
-                                        Более
-                                    </h1>
-                                    <h1 class="shadowBolee">
-                                        Более
-                                    </h1>
+                            <div class="col my-auto">
+                                <div class="row my-4">
+                                    <img src="img/logo.svg" class="logo">
                                 </div>
                                 <div class="row">
-                                    <p class="bold">
-
-                                        <span style="color:white;font-weight: 700;">
-                                            +1.500
-                                        </span>
-                                        школьников присоединились к нам!
+                                    <p class="slogan">
+                                        Найди своих
+                                        единомышленников
+                                        и развивайся!
                                     </p>
                                 </div>
-                                <div class="row ramka">
-                                    <div class="col">
-                                        <div class="row my-3">
-                                            <p style="color:white;font-weight: 600;font-size: 20px;line-height: 24px;">
-                                                На сайте я нашла своих
-                                                единомышленников и
-                                                свое призвание!</p>
+                            </div>
+                            <div class="col">
+                                <div class="row" style="height: 100vh;">
+                                    <div class="col-6 ms-auto my-auto">
+                                        <div class="row">
+                                            <h1 style="color: #8080FF;font-weight: 700;font-size: 64px;">
+                                                Более
+                                            </h1>
+                                            <h1 class="shadowBolee">
+                                                Более
+                                            </h1>
                                         </div>
                                         <div class="row">
-                                            <p class="author" style="width:max-content;">
-                                                Елизавета Шабурова
+                                            <p class="bold">
+
+                                                <span style="color:white;font-weight: 700;">
+                                                    +1.500
+                                                </span>
+                                                школьников присоединились к нам!
                                             </p>
                                         </div>
-                                    </div>
+                                        <div class="row ramka bg-white ">
+                                            <div class="col">
+                                                <div class="row my-3">
+                                                    <p
+                                                        style="color: rgba(0, 0, 0, 0.5);font-weight: 600;font-size: 20px;line-height: 24px;">
+                                                        На сайте я нашла своих
+                                                        единомышленников и
+                                                        свое призвание!</p>
+                                                </div>
+                                                <div class="row">
+                                                    <p class="author"
+                                                        style="width:max-content;color: rgba(0, 0, 0, 0.5);">
+                                                        Елизавета Шабурова
+                                                    </p>
+                                                </div>
+                                            </div>
 
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- Слайд 2 -->
-        <div class="row panel" style="height: 100vh;" data-section-name="2">
+        <div class="row panel bg5kitov" style="height: 100vh;" data-section-name="2">
             <div class="col-10 mx-auto" style="height: 100vh;">
                 <div class="row" style="height: 100vh;">
                     <div class="row">
                         <div class="col">
-                            <div class="row" style="margin-top: 20vh;">
-                                <h1 class="kit" style="width:max-content;">
-                                    5 китов
-                                </h1>
-                                <h1 class="shadowKit" style="width:max-content;">
-                                    5 китов
-                                </h1>
-                            </div>
-                            <div class="row bold">
-                                <div class="col-6">
+                            <div class="row" style="margin-top: 0vh;">
+                                <div class="col-3">
+                                    <img src="img/5kits.svg" class="w-100">
+                                </div>
+                                <div class="col bold my-auto">
                                     <p>
                                         Выбери своего <span
                                             style="font-style: normal;font-weight: 500;font-size: 24px;line-height: 33px;color: #E06529;">кита</span>
@@ -122,35 +119,69 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row row-cols-5" style="z-index: 10000;">
-                                <div class="col mx-auto" style="width: 350px;">
+                            <div class="row" style="z-index: 10000;margin-top:10vh;">
+                                <div class="col-3 mx-auto">
                                     <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
-
+                                        <div class="col">
+                                            <a href="kit.php?kit_id=3" class="mx-auto text-decoration-none">
+                                                <img src="img/1.svg" class="w-100">
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
+                                    <div class="row mt-">
+                                        <p class="mx-auto bold" style="width: max-content;color:#F96C1B;">Рисуем все</p>
                                     </div>
                                 </div>
-                                <div class="col mx-auto" style="width: 350px;">
+                                <div class="col-3 mx-auto">
                                     <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
-
+                                        <div class="col">
+                                            <a href="kit.php?kit_id=2" class="mx-auto text-decoration-none">
+                                                <img src="img/2.svg" class="w-100">
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
+                                    <div class="row mt-">
+                                        <p class="mx-auto bold" style="width: max-content;color:#F96C1B;">Все в спорт!
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col mx-auto" style="width: 350px;">
+                            </div>
+                            <div class="row">
+                                <div class="col-3 mx-auto">
                                     <div class="row">
-                                        <div class="col ramka1" style="height: 250px;">
-
+                                        <div class="col">
+                                            <a href="kit.php?kit_id=1" class="mx-auto text-decoration-none">
+                                                <img src="img/3.svg" class="w-100">
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <p class="mx-auto bold" style="width: max-content;">“Музыка для всех”</p>
+                                    <div class="row mt-">
+                                        <p class="mx-auto bold" style="width: max-content;color:#F96C1B;">3 языка</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 mx-auto">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="kit.php?kit_id=4" class="mx-auto text-decoration-none">
+                                                <img src="img/4.svg" class="w-100">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-">
+                                        <p class="mx-auto bold" style="width: max-content;color:#F96C1B;">Шахматы</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 mx-auto">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="kit.php?kit_id=5" class="mx-auto text-decoration-none">
+                                                <img src="img/5.svg" class="w-100">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-">
+                                        <p class="mx-auto bold" style="width: max-content;color:#F96C1B;">Музыка для
+                                            всех</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +191,7 @@
             </div>
         </div>
         <!-- Слайд 3 -->
-        <div class="row panel" style="height: 100vh;" data-section-name="3">
+        <div class="row panel bg" style="height: 100vh;" data-section-name="3">
             <div class="col-10 mx-auto" style="height: 100vh;">
                 <div class="row" style="height: 100vh;">
                     <div class="col">
@@ -235,9 +266,9 @@
             </div>
         </div>
         <!-- Слайд 4 -->
-        <div class="row panel" style="height: 100vh;" data-section-name="4">
+        <div class="row panel bgKek" style="height: 100vh;" data-section-name="4">
             <div class="col-10 mx-auto" style="height: 100vh;">
-                <div class="row" style="margin-top: 100px;margin-bottom:100px;">
+                <div class="row" style="margin-top: 30px;margin-bottom:100px;">
                     <h1 class="project text-white animate__animated" style="width:max-content;">
                         Новости
                     </h1>
@@ -245,136 +276,88 @@
                         Новости
                     </h1>
                 </div>
-                <div class="row" style="">
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews" style="border:1px solid #8080FF;">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
+                <div class="row row-cols-3 g-5">
+                            <?php
+                                for($i=0;$i<$query2->num_rows;$i++){
+                                    $stroka1 = $query2->fetch_assoc();
+                                    echo '<a class="d-flex text-decoration-none" href="news.php?news_id='.$stroka1['id'].'">';
+                            ?>
+                            
+                            <div class="col mx-auto">
                                 <div class="row">
-                                    <img src="img/case.png" class="w-100">
+                                    <div class="col ramkaNews">
+                                        <div class="row">
+                                            <div class="col-11 mx-auto py-3" style="border-radius: 10px;">
+                                            <?php
+                                                echo '<img src="'.$stroka1['img'].'" class="w-100 h-100" style="border-radius: 10px;">';
+                                            ?>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
+                                        <div class="row mt-4">
+                                            <p
+                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-size: 16px;line-height: 22px;color: #FFFFFF;">
+                                                <?php
+                                                    echo $stroka1['title'];
+                                                ?>
+                                            </p>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
+                            </a>
+                            <?php
+                                };
+                            ?>
                         </div>
-                    </div>
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
-                                <div class="row">
-                                    <img src="img/case.png" class="w-100">
-                                </div>
-                                <div class="row">
-                                    <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews" style="border:1px solid #8080FF;">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
-                                <div class="row">
-                                    <img src="img/case.png" class="w-100">
-                                </div>
-                                <div class="row">
-                                    <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row mt-5">
-                    <button class="btn btn-our px-4 py-2 mx-auto" style="width: max-content;">
+                    <a href="allnews.php" class="mx-auto" style="width:max-content;">
+                    <button class="btn btn-our px-4 py-2 " style="width: max-content;">
                         Все новости
                     </button>
+                    </a>
                 </div>
             </div>
         </div>
         <!-- Слайд 5 -->
-        <div class="row panel" style="height: 100vh;" data-section-name="5">
-            <div class="row">
-                <div class="col-6 mx-auto mt-3">
-                    <h1 class="project text-white animate__animated mx-auto" style="width:max-content;">
-                        Документы
-                    </h1>
-                    <h1 class="shadow2Project mx-auto text-white animate__animated" style="width:max-content;">
-                        Документы
-                    </h1>
+        <div class="row panel bgKek" style="height: 100vh;" data-section-name="5">
+            <div class="row" style="height:10vh;">
+                <div class="col-6 mx-auto">
+                    <div class="row h-100">
+                        <img src="img/Group 214.svg" class="w-75 mx-auto my-auto">
+                    </div>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-3 mx-auto">
-                    <div class="row">
-                        <img src="img/konc.png" class="w-75 mx-auto">
-                    </div>
-                    <div class="row">
-                        <p class="bold mx-auto mt-3" style="width: max-content;">Концепции</p>
+                    <div class="row h-100">
+                        <img src="img/Group 201.svg" class="w-100 mb-auto">
                     </div>
                 </div>
-
                 <div class="col-3 mx-auto">
-                    <div class="row">
-                        <img src="img/docs.png" class="w-75 mx-auto">
-                    </div>
-                    <div class="row">
-                        <p class="bold mx-auto mt-3" style="width: max-content;">Приказы</p>
+                    <div class="row h-100">
+                        <img src="img/Group 202.svg" class="w-100 mb-auto">
                     </div>
                 </div>
-
                 <div class="col-3 mx-auto">
-                    <div class="row">
-                        <img src="img/rasp.png" class="w-75 mx-auto">
-                    </div>
-                    <div class="row">
-                        <p class="bold mx-auto mt-3" style="width: max-content;">Распоряжения</p>
+                    <div class="row h-100">
+                        <img src="img/Group 203.svg" class="w-100 mb-auto">
                     </div>
                 </div>
             </div>
         </div>
         <!-- Слайд 6 -->
-        <div class="row panel" style="height: 100vh;" data-section-name="6">
+        <div class="row panel bgCircle" style="height: 100vh;" data-section-name="6">
             <div class="row">
                 <div class="col-6 mx-auto mt-5">
-                    <h1 class="project text-white animate__animated mx-auto" style="width:max-content;">
-                        Live
-                    </h1>
-                    <h1 class="shadow2Project mx-auto text-white animate__animated" style="width:max-content;">
-                        Live
-                    </h1>
+                    <div class="row">
+                        <img src="img/live.svg" class="w-25 mx-auto">
+                    </div>
                 </div>
             </div>
             <div class="row ss">
@@ -383,7 +366,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row ">
+            <div class="row">
                 <iframe class="mx-auto" style="width: 50vw;"
                     src="https://vk.com/video_ext.php?oid=-212633668&id=456239039&hash=101923f861fd5eb4" height="500"
                     frameborder="0" allowfullscreen="1"
