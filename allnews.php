@@ -43,6 +43,11 @@
                     <div class="col-4">
                         <img src="img/Group 216.svg" class="w-100">
                     </div>
+                    <a href="cn.php" class="my-auto ms-auto" style="width: max-content;">
+                        <button class="btn btn-more py-2 px-4 " style="width: max-content;height:10%;">
+                            Добавить
+                        </button>
+                    </a>
                 </div>
                 <div class="row">
                     <div class="col-3 ramkaOrange p-2 me-2" style="">
@@ -56,6 +61,10 @@
                                 $stroka2 = $nao->fetch_assoc();
                         ?>
                         <div class="row">
+                            <?php
+                                echo '<a href=news.php?news_id='.$stroka2['id'].' class="text-decoration-none">';
+                            ?>
+                            
                             <div class="col">
                                 <div class="row">
                                     <p
@@ -71,6 +80,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <?php
                                 };

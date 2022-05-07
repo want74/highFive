@@ -64,6 +64,12 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.bg-now{
+    background-image: url("../img/Group\ 192.svg");
+    background-size: 100vw;
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
 .bg {
     background-image: url("../img/bg.svg");
     background-size: 50vw;
@@ -72,7 +78,7 @@ body {
 }
 
 .sector1 {
-    background-image: url("../img/sector1.svg");
+    background-image: url("../img/.svg");
     background-size: 100vw;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,12 +92,17 @@ body {
 }
 
 .lol {
-    background-image: url("../img/kit1.svg");
-    background-size: 30vw;
+    background-image: url("../img/Group\ 217.svg");
+    background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.loll {
+    background-image: url("https://cdn.discordapp.com/attachments/965579549368803358/972374578577965076/Untitled-unscreen.gif");
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .bgCircle {
     background-image: url("../img/circle.svg");
     background-size: 40vw;
@@ -249,6 +260,11 @@ body {
     border-radius: 10px;
 }
 
+.ramkaNewss {
+    border: 1px solid #F96C1B;
+    border-radius: 10px;
+    height: 200px;
+}
 .borderNews2 {
     border-radius: 10px;
     border: 1px solid white;

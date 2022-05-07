@@ -3,6 +3,7 @@
     session_start();
     $query1 = mysqli_query($con, "SELECT * FROM kits WHERE id='{$_GET['kit_id']}'");
     $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE kit_id='{$_GET['kit_id']}'");
+    $klk = mysqli_query($con, "SELECT * FROM news WHERE kit_id='{$_GET['kit_id']}' ORDER BY id DESC");
     $stroka1 = $query1->fetch_assoc();
 ?>
 
@@ -76,35 +77,55 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-5">
-                                <div class="row ramkaNews" style="border:1px solid #8080FF;height:150px;">
+                            <div class="col">
+                                <div class="row row-cols-3 g-5">
+                                    <?php
+                                        for($i=0;$i<$klk->num_rows;$i++){
+                                            $stroka3 = $klk->fetch_assoc();
+                                            echo '<a class="d-flex text-decoration-none" href="news.php?news_id='.$stroka3['id'].'">';
+                                    ?>
 
-                                </div>
-                                <div class="row rel" style="margin-top:-130px">
-                                    <div class="col-11 mx-auto">
+                                    <div class="col mx-auto">
                                         <div class="row">
-                                            <img src="img/case.png" class="w-100">
+                                            <div class="col ramkaNews">
+                                                <div class="row">
+                                                    <div class="col-11 mx-auto py-3" style="border-radius: 10px;">
+                                                        <?php
+                                                echo '<img src="'.$stroka3['img'].'" class="w-100 h-100" style="border-radius: 10px;">';
+                                            ?>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-11 mx-auto borderNews2"
-                                                style="height:150px; background:#2E3190;">
-                                                <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                                    class="my-4">
-                                                    Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя
-                                                    профессия IT
-                                                    2022”.
-                                                    Задание создать web сайт для...
-                                                </p>
+                                            <div class="col-11 mx-auto borderNews2">
+                                                <div class="row mt-4">
+                                                    <p
+                                                        style="font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-size: 16px;line-height: 22px;color: #FFFFFF;">
+                                                        <?php
+                                                    echo $stroka3['title'];
+                                                ?>
+                                                    </p>
+                                                </div>
                                             </div>
-
                                         </div>
                                     </div>
+                                    </a>
+                                    <?php
+                                        };
+                                    ?>
+                                    <a href="allnews.php" class="my-auto ms-5 d-flex text-decoration-none" style="width: max-content;">
+                                    <button class="btn btn-more py-2 px-4 "
+                                        style="width: max-content;height:10%;">
+                                        Больше новостей
+                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                            <button class="btn btn-more py-2 px-4 mt-auto ms-5" style="width: max-content;height:10%;">
-                                Больше новостей
-                            </button>
+
                         </div>
+
                     </div>
                     <div class="col">
                         <div class="row mt-5">

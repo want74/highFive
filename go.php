@@ -177,7 +177,7 @@
                                                 <p class="login">Логин</p>
                                             </div>
                                             <div class="row">
-                                                <input type="text" name="login" class="form-control text-white"
+                                                <input type="text" name="login" class="form-control text-dark"
                                                     placeholder="Например: Alexey Semenov">
                                             </div>
                                         </div>
@@ -188,7 +188,7 @@
                                                 <p class="login">Пароль</p>
                                             </div>
                                             <div class="row">
-                                                <input type="password" name="pass" class="form-control text-white"
+                                                <input type="password" name="pass" class="form-control  text-dark"
                                                     placeholder="Password">
                                             </div>
                                         </div>

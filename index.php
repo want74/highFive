@@ -1,6 +1,7 @@
 <?php
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM users");
+    $query2 = mysqli_query($con, "SELECT * FROM news ORDER BY id DESC");
     session_start();
 ?>
 
@@ -31,13 +32,13 @@
         echo'<div class="abs"><a href="regist.php"><button class="btn btn-reg py-3 px-2 text-decoration-none">Регистрация</button></a><a href="go.php"><button class="btn btn-go py-3 px-4 text-decoration-none">Войти</button></a></div>';
      }
     ?>
-
+    
     <div class="container-fluid">
         <!-- Слайд 1 -->
-        <div class="row panel sector1" style="height: 100vh;" data-section-name="1">
+        <div class="row panel bgKek" style="height: 100vh;" data-section-name="1">
             <div class="col">
-                <div class="row lol">
-                    <div class="col-10 mx-auto" style="height: 100vh;">
+                <div class="row lol ">
+                    <div class="col-10 loll mx-auto" style="height: 100vh;">
                         <div class="row" style="height: 100vh;">
                             <div class="col my-auto">
                                 <div class="row my-4">
@@ -275,81 +276,50 @@
                         Новости
                     </h1>
                 </div>
-                <div class="row" style="">
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews" style="border:1px solid #8080FF;">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
+                <div class="row row-cols-3 g-5">
+                            <?php
+                                for($i=0;$i<$query2->num_rows;$i++){
+                                    $stroka1 = $query2->fetch_assoc();
+                                    echo '<a class="d-flex text-decoration-none" href="news.php?news_id='.$stroka1['id'].'">';
+                            ?>
+                            
+                            <div class="col mx-auto">
                                 <div class="row">
-                                    <img src="img/case.png" class="w-100">
+                                    <div class="col ramkaNews">
+                                        <div class="row">
+                                            <div class="col-11 mx-auto py-3" style="border-radius: 10px;">
+                                            <?php
+                                                echo '<img src="'.$stroka1['img'].'" class="w-100 h-100" style="border-radius: 10px;">';
+                                            ?>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
+                                        <div class="row mt-4">
+                                            <p
+                                                style="font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-size: 16px;line-height: 22px;color: #FFFFFF;">
+                                                <?php
+                                                    echo $stroka1['title'];
+                                                ?>
+                                            </p>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
+                            </a>
+                            <?php
+                                };
+                            ?>
                         </div>
-                    </div>
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
-                                <div class="row">
-                                    <img src="img/case.png" class="w-100">
-                                </div>
-                                <div class="row">
-                                    <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 mx-auto">
-                        <div class="row ramkaNews" style="border:1px solid #8080FF;">
-
-                        </div>
-                        <div class="row rel">
-                            <div class="col-11 mx-auto">
-                                <div class="row">
-                                    <img src="img/case.png" class="w-100">
-                                </div>
-                                <div class="row">
-                                    <div class="col-11 mx-auto borderNews2">
-                                        <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
-                                            class="my-5">
-                                            Гильдия Yaka из кита- ”Рисуем все”, выиграли в конкусе “Моя профессия IT
-                                            2022”.
-                                            Задание создать web сайт для...
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row mt-5">
-                    <button class="btn btn-our px-4 py-2 mx-auto" style="width: max-content;">
+                    <a href="allnews.php" class="mx-auto" style="width:max-content;">
+                    <button class="btn btn-our px-4 py-2 " style="width: max-content;">
                         Все новости
                     </button>
+                    </a>
                 </div>
             </div>
         </div>

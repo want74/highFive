@@ -55,6 +55,10 @@
                                 $stroka2 = $nao->fetch_assoc();
                         ?>
                         <div class="row">
+                            <?php
+                                echo '<a href=news.php?news_id='.$stroka2['id'].' class="text-decoration-none">';
+                            ?>
+                            
                             <div class="col">
                                 <div class="row">
                                     <p
@@ -70,6 +74,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <?php
                                 };

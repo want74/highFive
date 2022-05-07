@@ -177,7 +177,7 @@
                                                 <p class="login">Логин</p>
                                             </div>
                                             <div class="row">
-                                                <input type="text" name="login" class="form-control"
+                                                <input type="text" name="login" class="text-dark form-control"
                                                     placeholder="Например: Alexey Semenov">
                                             </div>
                                         </div>
@@ -188,7 +188,7 @@
                                                 <p class="login">Почта</p>
                                             </div>
                                             <div class="row">
-                                                <input type="email" name="email" class="form-control"
+                                                <input type="email" name="email" class="form-control text-dark"
                                                     placeholder="Enter email address">
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                                 <p class="login">Создайте надежный пароль</p>
                                             </div>
                                             <div class="row">
-                                                <input type="password" name="pass" class="form-control"
+                                                <input type="password" name="pass" class="form-control text-dark"
                                                     placeholder="Password">
                                             </div>
                                         </div>

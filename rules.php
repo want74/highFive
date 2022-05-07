@@ -1,8 +1,11 @@
 <?php 
+    session_start();
     include "connect.php";
     $query2 = mysqli_query($con, "SELECT * FROM guilds WHERE id='{$_GET['guild_id']}'");
     $query3 = mysqli_query($con, "SELECT * FROM newsguild WHERE guild_id='{$_GET['guild_id']}'");
     $stroka1 = $query2->fetch_assoc();
+    $userd = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['user_id']}'");
+    $userstr = $userd->fetch_assoc();
 ?>
 
 <!doctype html>
@@ -26,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-<body>
+<body class="bg-now" style="height: 100vh;">
     <div class="container-fluid">
         <div class="row" style="height: 100vh;" data-section-name="1">
             <div class="col-10 mx-auto" style="height: 100vh;">
@@ -75,7 +78,7 @@
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-11 mx-auto borderNews3">
+                                            <div class="col-11 mx-auto borderNews3"  style="margin-top: 160px;">
                                                 <p style="font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-size: 16px;line-height: 22px;color: #FFFFFF;"
                                                     class="my-5">
                                                     <?php
@@ -85,10 +88,17 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button class="btn btn-join mx-auto px-4 py-2 text-white"
-                                                style="width: max-content;">
-                                                Вступить!
-                                            </button>
+                                            <?php
+                                                if($userstr['guild_id']==0){
+                                                    echo '<a class="mx-auto" style="width:max-content;" href="plus.php?guild_id='.$_GET["guild_id"].'">
+                                                    <button class="btn btn-join  px-4 py-2 text-white"
+                                                        style="width: max-content;">
+                                                        Вступить!
+                                                    </button>
+                                                    </a>';
+                                                }
+                                                
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
